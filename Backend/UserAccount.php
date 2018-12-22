@@ -11,17 +11,13 @@
 			$this->$password = $password;
 		}
 		public function login(){
-
 		}
 		public function signUp(){
 			
 		}
 		public function editInfo(){
-
 		}
 		public function signOut(){
-
 		}
-
 	}
 ?>
