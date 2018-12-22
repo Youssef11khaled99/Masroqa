@@ -93,6 +93,7 @@
     background: #fff;
     box-shadow: inset -0.2rem -2rem 2rem rgba(0, 0, 0, 0.2);
   }
+  
   .login__form {
     position: absolute;
     top: 50%;
@@ -502,3 +503,19 @@
     }
   }
   
+  /*additional css*/
+  ::placeholder{
+    color :#c1c1c1;
+  }
+  .signup{
+    top: 40%;
+    left: 46%;
+    width: 43rem;
+    height: 71rem;
+  }
+  .signup-form{
+    top: 40%;
+  }
+  .signup-check{
+    left:20rem;
+  }
