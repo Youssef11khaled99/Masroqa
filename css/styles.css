@@ -45,7 +45,7 @@
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
   }
   
-  .demo {
+  .demo ,.signup-panel{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,7 +56,7 @@
     overflow: hidden;
   }
   
-  .login {
+  .login,.signup {
     position: relative;
     height: 100%;
     background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
@@ -71,7 +71,7 @@
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
-  .login__check {
+  .login__check,.signup__check {
     position: absolute;
     top: 16rem;
     left: 13.5rem;
@@ -83,7 +83,7 @@
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
   }
-  .login__check:before {
+  .login__check:before ,.signup__check:before{
     content: "";
     position: absolute;
     left: 0;
@@ -93,7 +93,7 @@
     background: #fff;
     box-shadow: inset -0.2rem -2rem 2rem rgba(0, 0, 0, 0.2);
   }
-  .login__form {
+  .login__form ,.signup__form{
     position: absolute;
     top: 50%;
     left: 0;
@@ -102,7 +102,7 @@
     padding: 1.5rem 2.5rem;
     text-align: center;
   }
-  .login__row {
+  .login__row,.signup__row {
     height: 5rem;
     padding-top: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -123,7 +123,7 @@
     -webkit-animation: animatePath 2s 0.5s forwards;
             animation: animatePath 2s 0.5s forwards;
   }
-  .login__input {
+  .login__input,.signup__input {
     display: inline-block;
     width: 22rem;
     height: 100%;
@@ -132,7 +132,7 @@
     background: transparent;
     color: #FDFCFD;
   }
-  .login__submit {
+  .login__submit,.signup__submit {
     position: relative;
     width: 100%;
     height: 4rem;
@@ -145,7 +145,7 @@
     overflow: hidden;
     transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
   }
-  .login__submit:after {
+  .login__submit:after ,.signup__submit:after{
     content: "";
     position: absolute;
     top: 50%;
@@ -161,16 +161,16 @@
     transition: opacity 0.1s 0.4s;
     opacity: 0;
   }
-  .login__submit.processing {
+  .login__submit.processing,.signup__submit.processing{
     width: 4rem;
     font-size: 0;
   }
-  .login__submit.processing:after {
+  .login__submit.processing:after,.signup__submit.processing:after {
     opacity: 1;
     -webkit-animation: rotate 0.5s 0.4s infinite linear;
             animation: rotate 0.5s 0.4s infinite linear;
   }
-  .login__submit.success {
+  .login__submit.success,.signup__submit.success {
     transition: opacity 0.1s 0.3s, background-color 0.1s 0.3s, -webkit-transform 0.3s 0.1s ease-out;
     transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
     transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s, -webkit-transform 0.3s 0.1s ease-out;
@@ -178,7 +178,7 @@
             transform: scale(30);
     opacity: 0.9;
   }
-  .login__submit.success:after {
+  .login__submit.success:after,.signup__submit.success:after {
     transition: opacity 0.1s 0s;
     opacity: 0;
     -webkit-animation: none;
@@ -505,15 +505,28 @@
   ::placeholder{
     color :#c1c1c1;
   }
-  .signup{
+  .signup-panel{
     top: 40%;
     left: 46%;
     width: 43rem;
     height: 71rem;
   }
-  .signup-form{
+  .signup__form{
     top: 40%;
   }
-  .signup-check{
+  .signup__check{
     left:20rem;
+  }
+  .error{
+    width: 92%; 
+    margin: 0px auto; 
+    padding: 10px; 
+    border: 1px solid #a94442; 
+    color: rgba(255, 255, 255, 0.8); 
+    background: #FF3366; 
+    border-radius: 5px; 
+    text-align: left;
+  }
+   .error-phrase{
+    font-size: 1.5rem;
   }
