@@ -501,4 +501,19 @@
       stroke-dashoffset: 0;
     }
   }
-  
+  /*additional css*/
+  ::placeholder{
+    color :#c1c1c1;
+  }
+  .signup{
+    top: 40%;
+    left: 46%;
+    width: 43rem;
+    height: 71rem;
+  }
+  .signup-form{
+    top: 40%;
+  }
+  .signup-check{
+    left:20rem;
+  }
