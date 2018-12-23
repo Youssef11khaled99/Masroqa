@@ -44,6 +44,38 @@ $(document).ready(function() {
       }, submitPhase1);
     }
   });
+  $(document).on("click", ".signup__submit", function(e) {
+    var nameValue = document.getElementById("name").value;
+    var emailValue = document.getElementById("mail").value;
+    var passwordValue = document.getElementById("pass").value;
+    var confirmPasswordValue = document.getElementById("confirm_pass").value;
+    if(passwordValue != confirmPasswordValue){
+      return;
+    }
+    else if (emailValue === "" || passwordValue === "" || nameValue ==="") {
+      return;
+    } else {
+      if (animating) return;
+      animating = true;
+      var that = this;
+      ripple($(that), e);
+      $(that).addClass("processing");
+      setTimeout(function() {
+        $(that).addClass("success");
+        setTimeout(function() {
+          $app.show();
+          $app.css("top");
+          $app.addClass("active");
+        }, submitPhase2 - 70);
+        setTimeout(function() {
+          $login.hide();
+          $login.addClass("inactive");
+          animating = false;
+          $(that).removeClass("success processing");
+        }, submitPhase2);
+      }, submitPhase1);
+    }
+  });
 
   $(document).on("click", ".app__logout", function(e) {
     if (animating) return;
