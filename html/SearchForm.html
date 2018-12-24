@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Form</title>
+    <style media="screen">
+      .main{
+        background-color: lightblue;
+        float: center;
+      }
+      .forms{
+        margin: 0 auto;
+        border: 2px solid green;
+        border-color: #4dd0e0;
+        box-shadow: 0 0 0 1px #4dd0e1;
+        border-radius: 4px;
+        float: center;
+      }
+      textarea#textarea1{
+        margin: 0 auto;
+        box-shadow: 0 0 0 1px #4dd0e1;
+        border: 2px solid green;
+        border-radius: 4px;
+        float: center;
+      }
+      .descripton{
+        margin: 0 auto;
+        float: center;
+      }
+      p#para{
+        font-family: Arial;
+        font-size: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <form class="forms" name="mainform" action="SearchControl.php" method="post">
+        <p id="para">Description</p>
+        <!-- Description -->
+        <div class="descripton">
+          <textarea id="textarea1" name="searchtext" rows="8" cols="40" placeholder="Enter a description about what you're searching for."></textarea>
+        </div>
+        <br/>
+        <!-- Type -->
+        <div class="type">
+            <input type="radio" name="objectType" value="Document" > Document <br/>
+            <input type="radio" name="objectType " value="Device"> Device <br/>
+            <input type="radio" name="objectType" value="Other Object"> Other Object <br/>
+        </div>
+
+
+
+        <!-- Location -->
+        <div class="location">
+
+        </div>
+
+
+
+        <input type="submit" name="searchsubmit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
