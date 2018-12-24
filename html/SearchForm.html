@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Form</title>
     <style media="screen">
+      .body{
+        font-family: Arial;
+      }
       .main{
         background-color: lightblue;
         float: center;
@@ -29,36 +32,54 @@
         float: center;
       }
       p#para{
-        font-family: Arial;
         font-size: 100%;
       }
+      .locationitems
+      {
+        margin: 0 auto;
+        box-shadow: 0 0 0 1px #4dd0e2;
+
+      }
+
     </style>
   </head>
-  <body>
+  <body class="body">
     <div class="main">
       <form class="forms" name="mainform" action="SearchControl.php" method="post">
-        <p id="para">Description</p>
+        <h4 id="para">Description</h4>
         <!-- Description -->
         <div class="descripton">
-          <textarea id="textarea1" name="searchtext" rows="8" cols="40" placeholder="Enter a description about what you're searching for."></textarea>
+          <textarea id="textarea1" autofocus="on" name="searchtext" rows="8%" cols="30%" placeholder="Enter a description about what you're searching for."></textarea>
         </div>
         <br/>
         <!-- Type -->
         <div class="type">
-            <input type="radio" name="objectType" value="Document" > Document <br/>
-            <input type="radio" name="objectType " value="Device"> Device <br/>
-            <input type="radio" name="objectType" value="Other Object"> Other Object <br/>
+          <fieldset style="border-radius: 4px;">
+            <legend><h4>Type</h4></legend>
+              <input type="radio" name="objectType" value="Document" > Document <br/>
+              <input type="radio" name="objectType " value="Device"> Device <br/>
+              <input type="radio" name="objectType" value="Other Object"> Other Object <br/>
+          </fieldset>
         </div>
 
 
 
         <!-- Location -->
         <div class="location">
-
+          <h4>Location</h4>
+          <p> Enter the city in which you think you've <em>lost</em> your object: </p>
+          <select class="locationitems" name="li">
+            <option value="Cairo">Cairo</option>
+            <option value="Giza">Giza</option>
+            <option value="Sharm">Sharm</option>
+            <option value="Alex">Alex</option>
+            <option value="Sohag">Sohag</option>
+            <option value="Sinai">Sinai</option>
+          </select>
         </div>
 
-
-
+        <!-- submit -->
+        <br/><br/><br/><br/>
         <input type="submit" name="searchsubmit" value="Submit">
       </form>
     </div>
