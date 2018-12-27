@@ -1,4 +1,6 @@
 <?php
+require DbHandler;
+
 $tArea = $_POST["searchtext"];
 $objectType = $_POST["objectType"];
 $locationItem = $_POST["li"];
@@ -15,19 +17,7 @@ of the location is: '.$locationItem.'<br/>';
 
 
 /*Conntect with database*/
-
-$servername = "localhost";
-$username = "nerdo";
-$password = "22963490nerdoO@";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+DbHandler dbhandler = new DbHandler();
 
 
 

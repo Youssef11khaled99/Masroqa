@@ -4,7 +4,7 @@
  */
 class DbHandler
 {
-  var $servername, $username, $password;
+  var $servername='localhost', $username='root', $password='12345678';
   var $conn;//Connection string
   var $sql, $result;//Query and its result
 
@@ -15,12 +15,9 @@ class DbHandler
 
   }
 
-  function __construct($s, $u, $p)
+  function __construct()
   {
     // code...
-    $servername = $s;
-    $username = $u;
-    $password = $p;
   }
   function connect()
   {
@@ -43,7 +40,11 @@ class DbHandler
   }
   function insert()
   {
-
+    if ($result === TRUE) {
+      echo "New record created successfully";
+  } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+  }
   }
   function update()
   {
