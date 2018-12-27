@@ -4,9 +4,17 @@
  */
 class DbHandler
 {
-  var $servername='localhost', $username='root', $password='12345678';
-  var $conn;//Connection string
-  var $sql, $result;//Query and its result
+    
+   $serverne="localhost"; 
+   $username="root"; 
+   $password="12345678";
+   $conn;//Connection string
+   $sql;
+   $result;//Query and its result
+   function setServerName($sn)
+   {
+     $servername = $sn;
+   }
 
   function setQuery($q)
   {
@@ -55,8 +63,7 @@ class DbHandler
 
   }
 
+
+
 }
-
-
-
  ?>
