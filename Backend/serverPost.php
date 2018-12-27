@@ -1,15 +1,13 @@
 <?php
+
+    $db = mysqli_connect('localhost', 'root', '12345678', 'masrooqa');
     $location = "";
     $date = "";
     $description = "";
     $photoPath = "";
     $type = "";
     $errors = array();
-
-
-
-    // connect to the database
-    $db = mysqli_connect('localhost', 'root', '12345678', 'masrooqa');
+    
     
     //if post button is clicked
     if (isset($_POST['submit']))
@@ -48,10 +46,13 @@
 
         if(count($errors) == 0)
         {
-            $sql = "INSERT INTO posts (date, location, description, photoPath, type) 
+            $query = "INSERT INTO posts (date, location, description, photoPath, type) 
                                 VALUES ('$date', '$location', '$description', '$photoPath', '$type')";
-            mysqli_query($db, $sql);
+            mysqli_query($db, $query);
+
+            header("location: ../html/Home.html");
         }
+
 
     }
     $db->close();

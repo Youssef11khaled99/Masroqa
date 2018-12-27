@@ -54,6 +54,8 @@ form{
     background: #5F9EA0;
     border: none;
     border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .error{
@@ -64,5 +66,5 @@ form{
     color: #a94442;
     background: #f2dede;
     border-radius: 5px;
-    text-align: left;
+    text-align: center;
 }

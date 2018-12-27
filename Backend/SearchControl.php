@@ -4,48 +4,67 @@ $objectType = $_POST["objectType"];
 $locationItem = $_POST["li"];
 
 
-
-echo "Hello. <br/>";
-
-echo 'Your descripton is: '.$tArea.'<br/> Your object type is: '.$objectType.'<br/>Item
-of the location is: '.$locationItem.'<br/>';
-
-
-
-
-
-/*Conntect with database*/
-
-$servername = "localhost";
-$username = "nerdo";
-$password = "22963490nerdoO@";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
-
+echo '
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+            <link rel="stylesheet" href="../css/styles.css">
+            <link rel="stylesheet" href="../css/search_result.css">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+        </head>
+        <body>
+                <div class="cont">
+                        <div class="demo">
+                        <div class="login" action="login.php" method="POST">
+                        <div class="login__check"> </div>
+                        <div class="login__row">
+                            <button type="button" class="login__submit" onclick="location.href = '."'../html/Home.html'".';"> Home</button>
+                        </div>
+                            <div class="login__form">
+                            <div class="login__row">
+                                <p class="search_result"> Your descripton is: '.$tArea.'</p>
+                            </div>
+                            <div class="login__row">
+                                <p class="search_result"> Your object type is: '.$objectType.'</p>
+                            </div>
+                            <div class="login__row">
+                                <p class="search_result"> Item
+                                of the location is: '.$locationItem.'</p>
+                            </div>';
 
 /*Searches in database*/
-$sql = "SELECT location FROM post";//A problem here.
-$result = $conn->query($sql);
-echo "Result of query: ".$result."<br/>";
 
-echo "no. of rows: ".$result->num_rows."<br/>";
-if ($result->num_rows > 0) {
+$conn = mysqli_connect('localhost', 'root', '12345678','masrooqa');
+
+$sql = "SELECT * FROM posts WHERE type='$objectType' and location='$locationItem'";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "photopath: " . $row["photoPath"]. " - DOL " . $row["DOL"]. " " . $row["numOfReports"]. "<br>";
-    }
+    while($row = mysqli_fetch_assoc($result)) {
+                echo '<div class="login__row">
+                    <p class="search_result"> date: '.$row["date"].'</p>
+                    </div>
+                <div class="login__row">
+                    <p class="search_result"> description: '.$row["description"].'</p>
+                </div>';
+            }
+            echo '
+                
+            </div>
+            </div>
+                          
+                      
+        </body>
+        </html>';
+
 } else {
     echo "0 results";
-    echo "'";
 }
+
 
 
 
@@ -53,5 +72,11 @@ if ($result->num_rows > 0) {
 
 /*Show the result in an html form*/
 
+
+
+
+
+
+mysqli_close($conn);
 
  ?>
